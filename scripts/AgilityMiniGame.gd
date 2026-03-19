@@ -41,11 +41,42 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	if not is_active:
+		return
+	
+	# Countdown reaction timer
+	round_timer -= delta
+	timer_bar.value = (round_timer / round_time) * 100.0
+	
+	# Time expired
+	if round_timer <= 0.0:
+		is_active = false
+		waiting_for_input = false
+		prompt_label.text = "MISS!"
+		_next_round()
 	
 	
 func _input(event: InputEvent) -> void:
-	
+	if not waiting_for_input:
+		return
+		
+	# check if correct arrow was pressed
+	if event.is_action_pressed(direction_actions[current_direction]):
+		is_active = false
+		waiting_for_input = false
+		successes += 1
+		prompt_label.text = "HIT!"
+		_next_round()
+	#wrong key pressed
+	elif event is InputEventKey and event.pressed:
+		for dir in directions:
+			if dir != current_direction and event.is_action_pressed(direction_actions[dir]):
+				is_active = false
+				waiting_for_input = false
+				prompt_label.text = "WRONG!"
+				_next_round()
+				return		
+		
 	
 ## Starts new round with random dir
 func _start_round() -> void:
