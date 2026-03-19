@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dldjy71mb2sxk" path="res://assets/sprites/grassland/grass.png" id="4_g3yoh"]
 [ext_resource type="Texture2D" uid="uid://6cfjfnyg4bfa" path="res://assets/sprites/grassland/tree.png" id="5_xswkv"]
 [ext_resource type="Texture2D" uid="uid://cxvxefjeby87e" path="res://assets/sprites/slime/slime_idle1.png" id="7_xswkv"]
+[ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="8_sc44i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b31yy"]
 texture = ExtResource("2_7ycb7")
@@ -253,7 +254,7 @@ animations = [{
 script = ExtResource("1_xswkv")
 
 [node name="SkyBackground" type="Sprite2D" parent="." unique_id=1199637403]
-scale = Vector2(0.9121429, 1.03)
+scale = Vector2(0.914367, 1.03)
 texture = ExtResource("1_lhwaf")
 centered = false
 
@@ -270,6 +271,92 @@ position = Vector2(556, 493)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xswkv")
 animation = &"idle1"
-frame_progress = 0.5182396
+frame = 1
+frame_progress = 0.114486545
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=816794206]
+[node name="UI" type="CanvasLayer" parent="." unique_id=816794206]
+
+[node name="TopLeftContainer" type="MarginContainer" parent="UI" unique_id=77190131]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TopLeft" type="VBoxContainer" parent="UI/TopLeftContainer" unique_id=618989797]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="MonsterName" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=903479219]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_sc44i")
+theme_override_font_sizes/font_size = 20
+text = "SLIME"
+
+[node name="HungerBar" type="ProgressBar" parent="UI/TopLeftContainer/TopLeft" unique_id=1734638229]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="HappinessBar" type="ProgressBar" parent="UI/TopLeftContainer/TopLeft" unique_id=1670781436]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+value = 50.0
+show_percentage = false
+
+[node name="MultiplierLabel" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=1268044100]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "1.0x"
+
+[node name="StatusLabel" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=767371520]
+layout_mode = 2
+text = "STR: 5  |  AGI: 5  |  STA: 4"
+
+[node name="TimerLabel" type="Label" parent="UI" unique_id=1045672146]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("8_sc44i")
+theme_override_font_sizes/font_size = 18
+text = "BATTLE TIMER:
+3:00"
+horizontal_alignment = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="UI" unique_id=1562772027]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -40.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="FeedButton" type="Button" parent="UI/BottomBar" unique_id=1163743024]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_sc44i")
+theme_override_font_sizes/font_size = 20
+text = "Feed"
+
+[node name="PlayButton" type="Button" parent="UI/BottomBar" unique_id=1663348836]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_sc44i")
+theme_override_font_sizes/font_size = 20
+text = "Play"
+
+[node name="TrainButton" type="Button" parent="UI/BottomBar" unique_id=1601655857]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_sc44i")
+theme_override_font_sizes/font_size = 20
+text = "Train
+"
