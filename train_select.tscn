@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.073987685, 9.960659e-05, 0.1762219, 1)
+color = Color(0.14130986, 0.00027263665, 0.29574108, 1)
 
 [node name="Title" type="Label" parent="." unique_id=1860689341]
 layout_mode = 1
@@ -35,15 +35,51 @@ text = "Training"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=535620170]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
 
 [node name="StrengthButton" type="Button" parent="VBoxContainer" unique_id=1562253003]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_au5il")
+theme_override_font_sizes/font_size = 20
+text = "Strength *ATK"
 
 [node name="AgilityButton" type="Button" parent="VBoxContainer" unique_id=151000233]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_au5il")
+theme_override_font_sizes/font_size = 20
+text = "Agility (DEF"
 
 [node name="StaminaButton" type="Button" parent="VBoxContainer" unique_id=416623023]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_au5il")
+theme_override_font_sizes/font_size = 20
+text = "Stamina <HP"
+
+[node name="BackButton" type="Button" parent="." unique_id=1916953677]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -50.0
+offset_right = 44.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_au5il")
+theme_override_font_sizes/font_size = 20
+text = "Back"
