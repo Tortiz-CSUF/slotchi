@@ -12,7 +12,7 @@ extends Control
 var total_rounds: int = 5
 var current_round: int = 0
 var successes: int = 0
-var round_time: float = 1.5
+var round_time: float = 1.0
 var round_timer: float = 0.0
 var is_active: bool = false
 var waiting_for_input: bool = false
@@ -119,7 +119,7 @@ func _finish_minigame() -> void:
 	# Show result
 	prompt_label.text = ""
 	round_label.text = ""
-	result_label.text = "%d of %d hits! DEF +%d - %.1fx multi" % [successes, total_rounds, final_gain, multiplier]
+	result_label.text = "%d of %d hits! DEF +%d * %.1fx multi" % [successes, total_rounds, final_gain, multiplier]
 	
 	
 func _on_back_pressed() -> void:

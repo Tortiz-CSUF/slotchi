@@ -10,7 +10,7 @@ extends Control
 
 
 ## Marker Movement
-var marker_speed: float = 400.0			# pixels per sec
+var marker_speed: float = 1500.0			# pixels per sec
 var marker_direction: int = 1 			# 1 = right, -1 = left
 var bar_start_x: float = 0.0
 var bar_end_x: float = 0.0
@@ -88,7 +88,7 @@ func _calculate_result() -> void:
 	MonsterData.atk += final_gain
 	
 	# Show results
-	result_label.text = "ATK +%d! (%.1fx mult)" % [final_gain, multiplier]
+	result_label.text = "ATK +%d! * %.1fx multi" % [final_gain, multiplier]
 	
 
 ## Return to care room

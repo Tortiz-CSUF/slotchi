@@ -55,8 +55,8 @@ func _input(event: InputEvent) -> void:
 	
 # Calcs Max HP gain based on tap count
 func _finish_minigame() -> void:
-	# Base HP gain = 1hp per 20 taps
-	var base_gain: int = max(1, tap_count / 20)
+	# Base HP gain = 1hp per 25 taps
+	var base_gain: int = max(1, tap_count / 25)
 	
 	# Apply trainging multi
 	var multiplier: float = MonsterData.get_training_multiplier()
@@ -66,7 +66,7 @@ func _finish_minigame() -> void:
 	MonsterData.max_hp += final_gain
 	
 	# show results
-	result_label.text = "%d taps! Max HP +%d - %.1fx multi" % [tap_count, final_gain, multiplier]
+	result_label.text = "%d taps! Max HP +%d * %.1fx multi" % [tap_count, final_gain, multiplier]
 	
 	
 func _on_back_pressed() -> void:
