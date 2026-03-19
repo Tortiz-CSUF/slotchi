@@ -21,13 +21,11 @@ func _on_strength() -> void:
 	
 	
 func _on_agility() -> void:
-	### INSERT AGILITY TRAIN SCENE PATH WHEN CREATED
-	GameManager.change_scene("INSERT SCENE", GameManager.GameState.TRAINING)
+	GameManager.change_scene("res://scenes/agility_mini_game.tscn", GameManager.GameState.TRAINING)
 	
 
 func _on_stamina() -> void:
-	### INSERT STAMINA TRAIN SCENE PATH WHEN CREATED
-	GameManager.change_scene("INSERT SCENE", GameManager.GameState.TRAINING)
+	GameManager.change_scene("res://scenes/stamina_mini_game.tscn", GameManager.GameState.TRAINING)
 	
 	
 func _on_back() -> void:
