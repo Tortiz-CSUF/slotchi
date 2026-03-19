@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bxp46dm4qcwji"]
+
+[ext_resource type="Script" uid="uid://df3c278rm217s" path="res://scripts/StaminaMiniGame.gd" id="1_kpjeg"]
+[ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="2_l7oe3"]
+
+[node name="StaminaMiniGame" type="Control" unique_id=1787681176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kpjeg")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2029610762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.0627451, 0.15686275, 1)
+
+[node name="Title" type="Label" parent="." unique_id=837842589]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 25.0
+offset_right = 231.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_l7oe3")
+theme_override_font_sizes/font_size = 28
+text = "Stamina Training"
+horizontal_alignment = 1
+
+[node name="Instructions" type="Label" parent="." unique_id=1145203786]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -252.0
+offset_top = 75.0
+offset_right = 252.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_l7oe3")
+theme_override_font_sizes/font_size = 14
+text = "Mash SPACE as fast as you can!"
+horizontal_alignment = 1
+
+[node name="CountLabel" type="Label" parent="." unique_id=1811562587]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_l7oe3")
+theme_override_font_sizes/font_size = 48
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1587508357]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -159.04
+offset_right = 19.0
+offset_bottom = -134.03998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_l7oe3")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1989666688]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 59.0
+offset_right = 19.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_l7oe3")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=277957525]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -50.0
+offset_right = 44.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_l7oe3")
+theme_override_font_sizes/font_size = 20
+text = "Back"
