@@ -32,9 +32,26 @@ func get_training_multiplier() -> float:
 		multiplier *= 1.5
 	return multiplier
 	
+
+## Feeds monster, increases hunger up to 100
+func feed() -> void:
+	hunger = min(hunger + feed_amount, 100.0)
 	
 	
+## Plays with monster, increases happiness up to 100
+func play() -> void:
+	happiness = min(happiness + play_amount, 100.0)
 	
+
+## Drains hunger and happiness over time. Will be called by Care ROom
+func drain_status(delta: float) -> void:
+	hunger = max(hunger - drain_rate * delta, 0.0)
+	happiness = max(happiness - drain_rate * delta, 0.0)
+	
+
+## Resets HP to max. Called at start of each battle. 
+func reset_hp() -> void:
+	current_hp = max_hp
 	
 	
 	
