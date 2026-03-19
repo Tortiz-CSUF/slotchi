@@ -14,6 +14,11 @@ config/name="SLOTCHI"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://c3w62m54bpn5a"
+MonsterData="*uid://dncs700rqk3fv"
+
 [display]
 
 window/size/viewport_width=1280
