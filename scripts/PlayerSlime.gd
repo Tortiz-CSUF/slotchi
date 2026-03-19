@@ -2,7 +2,8 @@
 extends AnimatedSprite2D
 
 
-## 
+## UI Node References
+
 
 
 # Called when the node enters the scene tree for the first time.
