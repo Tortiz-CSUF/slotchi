@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://6vjmf3ndmxps"]
 
+[ext_resource type="Script" uid="uid://tdhrt3c40xyf" path="res://scripts/StrengthMiniGame.gd" id="1_haeyj"]
+[ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="2_40ycm"]
+
 [node name="StrengthMiniGame" type="Control" unique_id=689699911]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,108 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_haeyj")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1554529947]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.0627451, 0.15686275, 1)
+
+[node name="Title" type="Label" parent="." unique_id=330646056]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 25.0
+offset_right = 231.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_40ycm")
+theme_override_font_sizes/font_size = 28
+text = "Strength Training"
+
+[node name="Instructions" type="Label" parent="." unique_id=252081917]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_top = 75.0
+offset_right = 259.0
+offset_bottom = 98.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_40ycm")
+theme_override_font_sizes/font_size = 14
+text = "Press SPACE to stop the marker!"
+horizontal_alignment = 1
+
+[node name="PowerBar" type="ProgressBar" parent="." unique_id=1862985246]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -13.5
+offset_right = 2.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+show_percentage = false
+
+[node name="TargetZone" type="ColorRect" parent="." unique_id=356897090]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 340.0
+offset_right = 675.0
+offset_bottom = 380.0
+color = Color(0, 0.654902, 0.27058825, 0.627451)
+
+[node name="Marker" type="ColorRect" parent="." unique_id=1030791090]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 335.0
+offset_right = 396.0
+offset_bottom = 385.0
+
+[node name="ResultLabel" type="Label" parent="." unique_id=1955792677]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = 59.0
+offset_right = 19.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_40ycm")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=812958272]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -50.0
+offset_right = 44.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_40ycm")
+theme_override_font_sizes/font_size = 20
+text = "Back"
