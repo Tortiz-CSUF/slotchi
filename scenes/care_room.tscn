@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dbxy5bcm2667r"]
 
 [ext_resource type="Texture2D" uid="uid://vr41pndiogmh" path="res://assets/sprites/background/8bit-pixel-graphic-blue-sky-background-with-clouds-vector.jpg" id="1_lhwaf"]
+[ext_resource type="Script" uid="uid://cg7ss0cdj68ri" path="res://scripts/CareRoom.gd" id="1_xswkv"]
 [ext_resource type="Texture2D" uid="uid://dhowtrn2ocds7" path="res://assets/sprites/grassland/tilesetgrass.png" id="2_7ycb7"]
 [ext_resource type="Texture2D" uid="uid://bdwyhhra0ox5y" path="res://assets/sprites/grassland/bush.png" id="3_8evc0"]
 [ext_resource type="Texture2D" uid="uid://dldjy71mb2sxk" path="res://assets/sprites/grassland/grass.png" id="4_g3yoh"]
@@ -222,6 +223,7 @@ sources/1 = SubResource("TileSetAtlasSource_8ro0j")
 sources/2 = SubResource("TileSetAtlasSource_2nang")
 
 [node name="CareRoom" type="Node2D" unique_id=1612300892]
+script = ExtResource("1_xswkv")
 
 [node name="SkyBackground" type="Sprite2D" parent="." unique_id=1199637403]
 scale = Vector2(0.9121429, 1.03)
