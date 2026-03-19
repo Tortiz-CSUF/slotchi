@@ -34,6 +34,7 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_40ycm")
 theme_override_font_sizes/font_size = 28
 text = "Strength Training"
+horizontal_alignment = 1
 
 [node name="Instructions" type="Label" parent="." unique_id=252081917]
 layout_mode = 1
