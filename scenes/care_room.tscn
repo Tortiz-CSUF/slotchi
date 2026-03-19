@@ -279,10 +279,10 @@ frame_progress = 0.114486545
 [node name="TopLeftContainer" type="MarginContainer" parent="UI" unique_id=77190131]
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="TopLeft" type="VBoxContainer" parent="UI/TopLeftContainer" unique_id=618989797]
 custom_minimum_size = Vector2(16, 16)
@@ -316,45 +316,57 @@ text = "1.0x"
 layout_mode = 2
 text = "STR: 5  |  AGI: 5  |  STA: 4"
 
-[node name="TimerLabel" type="Label" parent="UI" unique_id=1045672146]
+[node name="TimerContainer" type="MarginContainer" parent="UI" unique_id=474147512]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -225.0
+offset_bottom = 49.0
 grow_horizontal = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TimerLabel" type="Label" parent="UI/TimerContainer" unique_id=1045672146]
+layout_mode = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 18
 text = "BATTLE TIMER:
 3:00"
 horizontal_alignment = 2
 
-[node name="BottomBar" type="HBoxContainer" parent="UI" unique_id=1562772027]
+[node name="BottomBarContainer" type="MarginContainer" parent="UI" unique_id=1766615052]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -120.0
+offset_left = -167.0
 offset_top = -40.0
-offset_right = 120.0
+offset_right = 167.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_bottom = 30
+
+[node name="BottomBar" type="HBoxContainer" parent="UI/BottomBarContainer" unique_id=1562772027]
+layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="FeedButton" type="Button" parent="UI/BottomBar" unique_id=1163743024]
+[node name="FeedButton" type="Button" parent="UI/BottomBarContainer/BottomBar" unique_id=1163743024]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 20
 text = "Feed"
 
-[node name="PlayButton" type="Button" parent="UI/BottomBar" unique_id=1663348836]
+[node name="PlayButton" type="Button" parent="UI/BottomBarContainer/BottomBar" unique_id=1663348836]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 20
 text = "Play"
 
-[node name="TrainButton" type="Button" parent="UI/BottomBar" unique_id=1601655857]
+[node name="TrainButton" type="Button" parent="UI/BottomBarContainer/BottomBar" unique_id=1601655857]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 20
