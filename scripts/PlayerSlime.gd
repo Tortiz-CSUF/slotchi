@@ -1,4 +1,8 @@
-extends Sprite2D
+### PlayerS;ime.gd
+extends AnimatedSprite2D
+
+
+## 
 
 
 # Called when the node enters the scene tree for the first time.

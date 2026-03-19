@@ -222,6 +222,19 @@ sources/0 = SubResource("TileSetAtlasSource_sc44i")
 sources/1 = SubResource("TileSetAtlasSource_8ro0j")
 sources/2 = SubResource("TileSetAtlasSource_2nang")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xswkv"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}]
+
 [node name="CareRoom" type="Node2D" unique_id=1612300892]
 script = ExtResource("1_xswkv")
 
@@ -240,5 +253,7 @@ tile_set = SubResource("TileSet_xys7c")
 [node name="SlimeLayer" type="TileMapLayer" parent="." unique_id=1621668916]
 visible = false
 
-[node name="PlayerSlime" type="Sprite2D" parent="." unique_id=975862232]
+[node name="PlayerSlime" type="AnimatedSprite2D" parent="." unique_id=1418701809]
+sprite_frames = SubResource("SpriteFrames_xswkv")
+animation = &"idle1"
 script = ExtResource("6_g3yoh")
