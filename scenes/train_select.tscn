@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2ung7ap54efk"]
 
 [ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="1_au5il"]
+[ext_resource type="Script" uid="uid://dyn3e164k8ww1" path="res://scripts/TrainSelect.gd" id="1_w7gi2"]
 
 [node name="TrainSelect" type="Control" unique_id=1436423464]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w7gi2")
 
 [node name="Background" type="ColorRect" parent="." unique_id=437813921]
 layout_mode = 1
@@ -17,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.14130986, 0.00027263665, 0.29574108, 1)
+color = Color(0.101960786, 0.101960786, 0.18039216, 1)
 
 [node name="Title" type="Label" parent="." unique_id=1860689341]
 layout_mode = 1

@@ -75,7 +75,7 @@ func _on_play_pressed() -> void:
 	
 ## Train button: transitions to training selection
 func _on_train_pressed() -> void:
-	GameManager.change_scene("res://scenes/strength_mini_game.tscn", GameManager.GameState.TRAINING)
+	GameManager.change_scene("res://scenes/train_select.tscn", GameManager.GameState.TRAINING)
 	
 
 ## Battle timer expire: transitions to battle scene
