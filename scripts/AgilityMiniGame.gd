@@ -81,7 +81,7 @@ func _input(event: InputEvent) -> void:
 ## Starts new round with random dir
 func _start_round() -> void:
 	current_round += 1
-	round_label.text = "Round %d / %d" % [current_round, total_rounds]
+	round_label.text = "Round %d of %d" % [current_round, total_rounds]
 	
 	# Picks random dir
 	current_direction = directions[randi() % directions.size()]
@@ -119,7 +119,7 @@ func _finish_minigame() -> void:
 	# Show result
 	prompt_label.text = ""
 	round_label.text = ""
-	result_label.text = "%d|%d hits! DEF +%d (%.1fx mult)" % [successes, total_rounds, final_gain, multiplier]
+	result_label.text = "%d of %d hits! DEF +%d - %.1fx multi" % [successes, total_rounds, final_gain, multiplier]
 	
 	
 func _on_back_pressed() -> void:
