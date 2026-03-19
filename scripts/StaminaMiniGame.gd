@@ -6,7 +6,7 @@ extends Control
 @onready var timer_label: Label = $TimerLabel
 @onready var result_label: Label = $ResultLabel
 @onready var instructions: Label = $Instructions
-@onready var back_button: Label = $BackButton
+@onready var back_button: Button = $BackButton
 
 ## Game Settings
 var game_duration: float = 5.0
@@ -19,22 +19,44 @@ var game_started: bool = false
 
 
 func _ready() -> void:
-	pass # Replace with function body.
-
+	back_button.pressed.connect(_on_back_pressed)
+	result_label.text = ""
+	count_label.text = "0"
+	timer_label.text = "5.0s"
+	instructions.text = "Press SPACE to start!"
 
 
 func _process(delta: float) -> void:
-	pass
+	if not is_active:
+		return
+		
+	# count down
+	game_timer -= delta
+	timer_label.text = "%.1fs" % max(game_timer, 0.0)
+	
+	# Time expired
+	if game_timer <= 0.0:
+		is_active = false
+		_finish_minigame()
 	
 	
 func _input(event: InputEvent) -> void:
-	
+	if event.is_action_pressed("ui_accept"):
+		if not game_started:
+			game_started = true
+			is_active = true
+			game_timer = game_duration
+			instructions.text = "Mash SPACE as fast as you can!"
+			tap_count = 0
+		elif  is_active:
+			tap_count += 1
+			count_label.text = str(tap_count)
 	
 	
 # Calcs Max HP gain based on tap count
 func _finish_minigame() -> void:
-	# Base HP gain = 1hp per 5 taps
-	var base_gain: int = max(1, tap_count / 5)
+	# Base HP gain = 1hp per 20 taps
+	var base_gain: int = max(1, tap_count / 20)
 	
 	# Apply trainging multi
 	var multiplier: float = MonsterData.get_training_multiplier()
