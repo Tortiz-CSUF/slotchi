@@ -56,7 +56,7 @@ func _update_ui() -> void:
 	multiplier_label.text = "Multiplier: %.1fx" % mult
 	
 	# Stats Display
-	stats_label.text = "STR: %d  |  AGI: %d  |  STA %d" % [
+	stats_label.text = "STR: %d\nAGI: %d\nSTA: %d" % [
 		MonsterData.atk, MonsterData.def, MonsterData.max_hp]
 	
 	# Battle timer

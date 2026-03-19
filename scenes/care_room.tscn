@@ -309,12 +309,17 @@ show_percentage = false
 
 [node name="MultiplierLabel" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=1268044100]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 14
 text = "1.0x"
 
 [node name="StatusLabel" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=767371520]
 layout_mode = 2
-text = "STR: 5  |  AGI: 5  |  STA: 4"
+theme_override_fonts/font = ExtResource("8_sc44i")
+theme_override_font_sizes/font_size = 13
+text = "STR: 5
+AGI: 5
+STA: 4"
 
 [node name="TimerContainer" type="MarginContainer" parent="UI" unique_id=474147512]
 anchors_preset = 1
