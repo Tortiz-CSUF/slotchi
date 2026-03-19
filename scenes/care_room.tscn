@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dbxy5bcm2667r"]
+
+[ext_resource type="Texture2D" uid="uid://vr41pndiogmh" path="res://assets/sprites/background/8bit-pixel-graphic-blue-sky-background-with-clouds-vector.jpg" id="1_lhwaf"]
+
+[node name="CareRoom" type="Node2D" unique_id=1612300892]
+
+[node name="SkyBackground" type="Sprite2D" parent="." unique_id=1199637403]
+scale = Vector2(0.9121429, 1.03)
+texture = ExtResource("1_lhwaf")
+centered = false
