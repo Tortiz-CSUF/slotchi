@@ -16,11 +16,33 @@ extends Node2D
 func _ready() -> void:
 	# Sets game state to CARE
 	GameManager.current_state = GameManager.GameState.CARE
+	
+	# Start battle timer if not runnning
+	if not GameManager.timer_running:
+		GameManager.reset_battle_timer()
+		
+	# Connect button signals
+	feed_button.pressed.connect(_on_feed_pressed)
+	play_button.pressed.connect(_on_play_pressed)
+	train_button.pressed.connect(_on_train_pressed)
+	
+	# Connect battle timer signal
+	GameManager.battle_timer_expired.connect(_on_battle_timer_expired)
+	
+	# Update UI
+	_update_ui()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
-	pass
+	# Drain hunger and happiness over time
+	MonsterData.drain_status(delta)
+	
+	# Update battle timer
+	GameManager.update_battle_timer(delta)
+	
+	# Refresh all UI elements
+	_update_ui()
 	
 	
 ## Refresh all UI elements to reflect curent data
