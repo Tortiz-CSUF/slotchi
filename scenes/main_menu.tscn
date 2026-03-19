@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://5c311a8sfv0o"]
 
+[ext_resource type="Script" uid="uid://bi6j1n77xi0kq" path="res://scripts/MainMenu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="1_l6cm7"]
 
 [node name="MainMenu" type="Control" unique_id=1688181246]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ekxnf")
 
 [node name="Background" type="ColorRect" parent="." unique_id=82990295]
 layout_mode = 1
