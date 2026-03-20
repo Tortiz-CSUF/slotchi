@@ -1,5 +1,122 @@
 [gd_scene format=3 uid="uid://1opsv85c1xmt"]
 
+[ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="1_d3rmf"]
+[ext_resource type="Texture2D" uid="uid://d0vhjptighvot" path="res://assets/sprites/slime/slime_idle2.png" id="2_u0dfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jx7t"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(0, 72, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rklv"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(80, 72, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3iaf"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(160, 72, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3p5w"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(240, 72, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kbcm"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(320, 72, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb4oc"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(400, 72, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yspgq"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(480, 72, 80, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l7kcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jx7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rklv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3iaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3p5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kbcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb4oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yspgq")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvrme"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(0, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wat5"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(80, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhs84"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(160, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmtb4"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(240, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts8p1"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(320, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei3no"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(400, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itwoe"]
+atlas = ExtResource("2_u0dfl")
+region = Rect2(480, 288, 80, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wnud"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvrme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wat5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhs84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmtb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts8p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei3no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itwoe")
+}],
+"loop": true,
+"name": &"enemy_idle",
+"speed": 12.0
+}]
+
 [node name="BattleArena" type="Control" unique_id=236867977]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +124,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=512339236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11586221, 0.0038759513, 0, 1)
+
+[node name="PlayerSideContainer" type="MarginContainer" parent="." unique_id=1632365529]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_right = 40.0
+offset_bottom = 27.0
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PlayerSide" type="VBoxContainer" parent="PlayerSideContainer" unique_id=693679915]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PlayerName" type="Label" parent="PlayerSideContainer/PlayerSide" unique_id=1819050082]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3rmf")
+theme_override_font_sizes/font_size = 18
+text = "SLIME"
+
+[node name="PlayerHPBar" type="ProgressBar" parent="PlayerSideContainer/PlayerSide" unique_id=426185339]
+custom_minimum_size = Vector2(150, 16)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="PlayerSlime" type="AnimatedSprite2D" parent="PlayerSideContainer/PlayerSide" unique_id=1668593401]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_l7kcc")
+animation = &"idle2"
+frame_progress = 0.41415063
+centered = false
+
+[node name="EnemySideContainer" type="MarginContainer" parent="." unique_id=748860053]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -81.0
+offset_bottom = 81.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="EnemySide" type="VBoxContainer" parent="EnemySideContainer" unique_id=689537712]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 10
+
+[node name="EnemyName" type="Label" parent="EnemySideContainer/EnemySide" unique_id=375567106]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_d3rmf")
+theme_override_font_sizes/font_size = 18
+text = "ENEMY"
+
+[node name="EnemyHPBar" type="ProgressBar" parent="EnemySideContainer/EnemySide" unique_id=1214378185]
+custom_minimum_size = Vector2(150, 16)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="IntentIcon" type="Label" parent="EnemySideContainer/EnemySide" unique_id=1303704956]
+layout_mode = 2
+
+[node name="EnemySlime" type="AnimatedSprite2D" parent="EnemySideContainer/EnemySide" unique_id=177039488]
+position = Vector2(-85, 0)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_4wnud")
+animation = &"enemy_idle"
+frame_progress = 0.3430591
+centered = false
+flip_h = true
