@@ -360,49 +360,76 @@ theme_override_font_sizes/font_size = 18
 text = "Heart+"
 
 [node name="SpinButton" type="Button" parent="." unique_id=633407926]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 140.0
+offset_right = 48.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_d3rmf")
+theme_override_font_sizes/font_size = 22
+text = "SPIN"
 
 [node name="InfoLabel" type="Label" parent="." unique_id=551911212]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -160.0
+offset_right = 84.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_d3rmf")
+horizontal_alignment = 1
 
 [node name="EndPanel" type="ColorRect" parent="." unique_id=749985269]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07450981, 0, 0.20392157, 0.8627451)
 
-[node name="Title" type="Label" parent="EndPanel" unique_id=1163692354]
+[node name="End Label" type="Label" parent="EndPanel" unique_id=1163692354]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -231.0
-offset_top = 25.0
+offset_top = 200.0
 offset_right = 231.0
-offset_bottom = 60.0
+offset_bottom = 260.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_d3rmf")
-theme_override_font_sizes/font_size = 28
-text = "Strength Training"
+theme_override_font_sizes/font_size = 48
+text = "Victory!"
 horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="EndPanel" unique_id=783632217]
+[node name="ReturnButton" type="Button" parent="EndPanel" unique_id=783632217]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -50.0
-offset_right = 44.0
-offset_bottom = -17.0
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -16.5
+offset_right = 179.0
+offset_bottom = 16.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_d3rmf")
 theme_override_font_sizes/font_size = 20
-text = "Back"
+text = "Return to Care Room"
