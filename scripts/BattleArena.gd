@@ -75,6 +75,9 @@ func _ready() -> void:
 	base_pool = [sword_icon, sword_icon, shield_icon, shield_icon, heart_icon, heart_icon]
 	_reset_pool()
 	
+	# Connect card to spin 
+	
+	
 
 
 ## Return to care room
@@ -94,4 +97,51 @@ func _reset_pool() -> void:
 func _randomize_grid() -> void:
 	for slot in slots:
 		slot.texture = symbol_pool[randi() % symbol_pool.size()]
+	
+	
+## called when player picks card to add pool symbols
+func _on_card_pressed(card_type: String) -> void:
+	if card_selected or is_spinning or battle_over:
+		return
+		
+	card_selected = true
+	
+	# add 3 chosen symbols to pool to increase odds
+	match card_type:
+		"sword":
+			for i in range(3):
+				symbol_pool.append(sword_icon)
+			info_label.text = "Added Swords to the pool!"
+		"shield":
+			for i in range(3):
+				symbol_pool.append(shield_icon)
+			info_label.text = "Added Shields to the pool!"	
+		"heart":
+			for i in range(3):
+				symbol_pool.append(heart_icon)
+			info_label.text = "Added Hearts to the pool!"	
+	
+	## enable spin button after card is slected
+	spin_button.disabled = false
+	
+	## disable card buttons
+	card1.disabled = true
+	card2.disabled = true
+	card3.disabled = true
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
