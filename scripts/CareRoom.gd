@@ -80,8 +80,7 @@ func _on_train_pressed() -> void:
 
 ## Battle timer expire: transitions to battle scene
 func _on_battle_timer_expired() -> void:
-	### MUST INSERT BATTLE SCENE WHEN CREATED
-	GameManager.change_scene("[INSERT SCENE HERE]", GameManager.GameState.BATTLE)
+	GameManager.change_scene("res://scenes/battle_arena.tscn", GameManager.GameState.BATTLE)
 	
 	
 	

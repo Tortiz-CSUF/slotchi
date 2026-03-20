@@ -93,6 +93,6 @@ func _calculate_result() -> void:
 
 ## Return to care room
 func _on_back_pressed() -> void:
-	GameManager.change_scene("res://scenes/train_select.tscn", GameManager.GameState.TRAINING)
+	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
 	
 	 
