@@ -26,8 +26,8 @@ var symbol_pool: Array = []
 var base_pool: Array = []
 
 ## Enemy State
-var enemy_max_hp: int = 50
-var enemy_hp: int = 50
+var enemy_max_hp: int = 100
+var enemy_hp: int = 100
 var enemy_intent: String = "" 		## attack or sabotage
 
 ## Spin Sate
@@ -190,12 +190,12 @@ func _finalize_spin() -> void:
 			
 	# Calc player actions
 	var player_damage: int = sword_count * (2 + MonsterData.atk / 5)
-	var player_defense: int = shield_count * (1 + MonsterData.def / 5)
+	var player_defense: int = shield_count + MonsterData.def / 5
 	var player_heal: int = heart_count * 2
 	var skull_damage: int = skull_count * 2
 	
 	# Calcs enemy actions
-	var enemy_damage: int = 0
+	var enemy_damage: int = 3 + randi() % 3
 	if enemy_intent == "attack":
 		enemy_damage = 5 + randi() % 4
 		
@@ -212,15 +212,15 @@ func _finalize_spin() -> void:
 	# build results display
 	var result_text: String = ""
 	if sword_count > 0:
-		result_text += "Swords x%d = %d DMG! " % [sword_count, player_damage]
+		result_text += "Swords x%d = %d DMG!\n " % [sword_count, player_damage]
 	if shield_count > 0:
-		result_text += "Shields x%d = %d DEF! " % [shield_count, player_defense]
+		result_text += "Shields x%d = %d DEF!\n " % [shield_count, player_defense]
 	if heart_count > 0:
-		result_text += "Hearts x%d = +%d HP! " % [heart_count, player_heal]
+		result_text += "Hearts x%d = +%d HP!\n " % [heart_count, player_heal]
 	if skull_count > 0:
-		result_text += "Skulls x%d = %d DMG to you! " % [skull_count, skull_damage]
+		result_text += "Skulls x%d = %d DMG to you!\n " % [skull_count, skull_damage]
 	if enemy_intent == "attack":
-		result_text += "Enemy dealt %d\n-%d def! " % [enemy_damage, player_defense]
+		result_text += "Enemy dealt %d\n-%d def!\n " % [enemy_damage, player_defense]
 	info_label.text = result_text
 	
 	#update HP bars
