@@ -281,6 +281,8 @@ func _update_hp_bars() -> void:
 	player_hp_bar.value = MonsterData.current_hp
 	enemy_hp_bar.value = enemy_max_hp
 	enemy_hp_bar.value = enemy_hp
+	player_hp_label.text = "%d of %d" % [MonsterData.current_hp, MonsterData.max_hp]
+	enemy_hp_label.text = "%d of %d" % [enemy_hp, enemy_max_hp]
 			
 			
 ## Ends battle 

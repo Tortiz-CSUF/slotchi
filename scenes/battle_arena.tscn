@@ -401,6 +401,7 @@ theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
 [node name="PlayerSide" type="VBoxContainer" parent="PlayerSideContainer" unique_id=693679915]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
@@ -419,10 +420,10 @@ show_percentage = false
 
 [node name="Label" type="Label" parent="PlayerSideContainer/PlayerSide/PlayerHPBar" unique_id=551548275]
 layout_mode = 0
-offset_left = 35.0
-offset_top = -2.5
-offset_right = 115.0
-offset_bottom = 20.5
+offset_left = 50.0
+offset_top = -1.5
+offset_right = 140.0
+offset_bottom = 21.5
 theme_override_fonts/font = ExtResource("1_d3rmf")
 theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
