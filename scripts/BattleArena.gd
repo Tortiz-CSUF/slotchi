@@ -16,11 +16,23 @@ extends Control
 @onready var return_button: Button = $EndPanel/ReturnButton
 
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	# Set game state
+	GameManager.current_state = GameManager.GameState.BATTLE
+	
+	# Reset Player HP for new battle
+	MonsterData.reset_hp()
+	
+	# Hide end panel
+	end_panel.visible = false
+	info_label.text = ""
+	
+	# Connect return button
+	return_button.pressed.connect(_on_return_pressed)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+## Return to care room
+func _on_return_pressed() -> void:
+	GameManager.reset_battle_timer()
+	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
