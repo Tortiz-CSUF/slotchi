@@ -77,13 +77,7 @@ func _ready() -> void:
 	
 	# Connect card to spin 
 	
-	
 
-
-## Return to care room
-func _on_return_pressed() -> void:
-	GameManager.reset_battle_timer()
-	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
 
 
 
@@ -243,12 +237,30 @@ func _update_hp_bars() -> void:
 			
 ## Ends battle 
 func _end_batttle(victory: bool) -> void:
+	battle_over = true
+	
+	# disable buttons
+	card1.disabled = true
+	card2.disabled = true
+	card3.disabled = true
+	spin_button.disabled = true
+	
+	#set end panel text
+	if victory:
+		end_label.text = "Victory!"
+	else:
+		end_label.text = "Defeat!"	
+		
+	# fade in end panel
+	end_panel.visible = true
+	var tween: Tween = create_tween()
+	tween.tween_property(end_panel, "modulate:a", 1.0, 1.0)
 	
 	
-	
-	
-	
-	
+## Return to care room
+func _on_return_pressed() -> void:
+	GameManager.reset_battle_timer()
+	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
 	
 	
 	
