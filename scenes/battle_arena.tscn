@@ -174,7 +174,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_yspgq")
 }],
 "loop": true,
-"name": &"idle2",
+"name": &"idle",
 "speed": 10.0
 }]
 
@@ -230,6 +230,14 @@ region = Rect2(880, 288, 80, 72)
 atlas = ExtResource("3_0rklv")
 region = Rect2(960, 288, 80, 72)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_md7y1"]
+atlas = ExtResource("4_j3iaf")
+region = Rect2(0, 288, 80, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kg3wj"]
+atlas = ExtResource("4_j3iaf")
+region = Rect2(80, 288, 80, 72)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kvrme"]
 atlas = ExtResource("2_u0dfl")
 region = Rect2(0, 288, 80, 72)
@@ -257,14 +265,6 @@ region = Rect2(400, 288, 80, 72)
 [sub_resource type="AtlasTexture" id="AtlasTexture_itwoe"]
 atlas = ExtResource("2_u0dfl")
 region = Rect2(480, 288, 80, 72)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_md7y1"]
-atlas = ExtResource("4_j3iaf")
-region = Rect2(0, 288, 80, 72)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kg3wj"]
-atlas = ExtResource("4_j3iaf")
-region = Rect2(80, 288, 80, 72)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4wnud"]
 animations = [{
@@ -314,6 +314,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_md7y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kg3wj")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kvrme")
 }, {
 "duration": 1.0,
@@ -335,19 +346,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_itwoe")
 }],
 "loop": true,
-"name": &"enemy_idle",
+"name": &"idle",
 "speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_md7y1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kg3wj")
-}],
-"loop": false,
-"name": &"hit",
-"speed": 8.0
 }]
 
 [node name="BattleArena" type="Control" unique_id=236867977]
@@ -416,10 +416,8 @@ show_percentage = false
 [node name="PlayerSlime" type="AnimatedSprite2D" parent="PlayerSideContainer/PlayerSide" unique_id=1668593401]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_l7kcc")
-animation = &"die"
-autoplay = "idle2"
-frame = 12
-frame_progress = 1.0
+animation = &"idle"
+autoplay = "idle"
 centered = false
 
 [node name="EnemySideContainer" type="MarginContainer" parent="." unique_id=748860053]
@@ -466,8 +464,8 @@ theme_override_font_sizes/font_size = 12
 position = Vector2(-85, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_4wnud")
-animation = &"hit"
-autoplay = "enemy_idle"
+animation = &"idle"
+autoplay = "idle"
 centered = false
 flip_h = true
 

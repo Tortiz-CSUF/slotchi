@@ -1,6 +1,10 @@
 ### BattleArena.gd
 extends Control
 
+## Animations
+@onready var player_slime: AnimatedSprite2D = $PlayerSideContainer/PlayerSide/PlayerSlime
+@onready var enemy_slime: AnimatedSprite2D = $EnemySideContainer/EnemySide/EnemySlime
+
 ## UI Nodes
 @onready var player_hp_bar: ProgressBar = $PlayerSideContainer/PlayerSide/PlayerHPBar
 @onready var enemy_hp_bar: ProgressBar = $EnemySideContainer/EnemySide/EnemyHPBar
@@ -202,12 +206,20 @@ func _finalize_spin() -> void:
 	# Apply results
 	enemy_hp = max(0, enemy_hp - player_damage)
 	
+	# enemy hit anim
+	if player_damage > 0:
+		_play_hit_anim(enemy_slime)
+	
 	# Heal player
 	MonsterData.current_hp = min(MonsterData.current_hp + player_heal, MonsterData.max_hp)
 	
 	# Calcs incoming dmg 
 	var incoming: int = max(0, enemy_damage - player_defense) + skull_damage
 	MonsterData.current_hp = max(0, MonsterData.current_hp - incoming)
+	
+	# play hit anim
+	if incoming > 0:
+		_play_hit_anim(player_slime)
 	
 	# build results display
 	var result_text: String = ""
@@ -277,10 +289,14 @@ func _end_batttle(victory: bool) -> void:
 	card3.disabled = true
 	spin_button.disabled = true
 	
-	#set end panel text
+	#set end panel text and die anim
 	if victory:
+		enemy_slime.play("die")
+		await enemy_slime.animation_finished
 		end_label.text = "Victory!"
 	else:
+		player_slime.play("die")
+		await enemy_slime.animation_finished
 		end_label.text = "Defeat!"	
 		
 	# fade in end panel
@@ -294,7 +310,12 @@ func _on_return_pressed() -> void:
 	GameManager.reset_battle_timer()
 	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
 	
-	
+
+## Plays hit anim then returns to idle
+func 	_play_hit_anim(sprite: AnimatedSprite2D) -> void:
+	sprite.play("hit")
+	await sprite.animation_finished
+	sprite.play("idle")
 	
 	
 	
