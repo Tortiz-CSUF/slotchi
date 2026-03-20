@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bu35vqxqdcyfd" path="res://assets/sprites/slime/slime_die.png" id="3_0rklv"]
 [ext_resource type="Texture2D" uid="uid://cgbyetg15hjua" path="res://assets/sprites/slime/slime_hit.png" id="4_j3iaf"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rklv"]
+bg_color = Color(0.14509805, 1, 0.003921569, 0.5882353)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7kcc"]
 atlas = ExtResource("3_0rklv")
 region = Rect2(0, 72, 80, 72)
@@ -410,8 +413,20 @@ text = "SLIME"
 [node name="PlayerHPBar" type="ProgressBar" parent="PlayerSideContainer/PlayerSide" unique_id=426185339]
 custom_minimum_size = Vector2(150, 16)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_0rklv")
 value = 100.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerSideContainer/PlayerSide/PlayerHPBar" unique_id=551548275]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -2.5
+offset_right = 115.0
+offset_bottom = 20.5
+theme_override_fonts/font = ExtResource("1_d3rmf")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerSlime" type="AnimatedSprite2D" parent="PlayerSideContainer/PlayerSide" unique_id=1668593401]
 scale = Vector2(3, 3)
@@ -453,8 +468,20 @@ text = "ENEMY"
 [node name="EnemyHPBar" type="ProgressBar" parent="EnemySideContainer/EnemySide" unique_id=1214378185]
 custom_minimum_size = Vector2(150, 16)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_0rklv")
 value = 100.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="EnemySideContainer/EnemySide/EnemyHPBar" unique_id=1439915771]
+layout_mode = 0
+offset_left = 60.0
+offset_top = -2.5
+offset_right = 140.0
+offset_bottom = 20.5
+theme_override_fonts/font = ExtResource("1_d3rmf")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="IntentIcon" type="Label" parent="EnemySideContainer/EnemySide" unique_id=1303704956]
 layout_mode = 2

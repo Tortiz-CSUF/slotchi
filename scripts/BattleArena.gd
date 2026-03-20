@@ -1,6 +1,10 @@
 ### BattleArena.gd
 extends Control
 
+## HP Labels
+@onready var player_hp_label: Label = $PlayerSideContainer/PlayerSide/PlayerHPBar/Label
+@onready var enemy_hp_label: Label = $EnemySideContainer/EnemySide/EnemyHPBar/Label
+
 ## Animations
 @onready var player_slime: AnimatedSprite2D = $PlayerSideContainer/PlayerSide/PlayerSlime
 @onready var enemy_slime: AnimatedSprite2D = $EnemySideContainer/EnemySide/EnemySlime
