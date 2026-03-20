@@ -669,6 +669,7 @@ grow_vertical = 2
 color = Color(0.07450981, 0, 0.20392157, 0.8627451)
 
 [node name="EndLabel" type="Label" parent="EndPanel" unique_id=1163692354]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -681,7 +682,7 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_d3rmf")
 theme_override_font_sizes/font_size = 48
 text = "Victory!"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [node name="ReturnButton" type="Button" parent="EndPanel" unique_id=783632217]
 layout_mode = 1

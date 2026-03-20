@@ -315,7 +315,8 @@ func _on_return_pressed() -> void:
 func 	_play_hit_anim(sprite: AnimatedSprite2D) -> void:
 	sprite.play("hit")
 	await sprite.animation_finished
-	sprite.play("idle")
+	if not battle_over:
+		sprite.play("idle")
 	
 	
 	
