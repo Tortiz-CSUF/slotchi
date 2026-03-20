@@ -61,7 +61,7 @@ func _ready() -> void:
 	return_button.pressed.connect(_on_return_pressed)
 	
 	# Scale enemy hp
-	enemy_max_hp = 30 + MonsterData.max_hp
+	enemy_max_hp = 100 				#leave as 100 for now: 30 + MonsterData.max_hp
 	enemy_hp = enemy_max_hp
 	
 	# Panel fade

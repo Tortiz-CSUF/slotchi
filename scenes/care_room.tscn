@@ -271,6 +271,7 @@ position = Vector2(556, 493)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_xswkv")
 animation = &"idle1"
+autoplay = "idle1"
 frame = 1
 frame_progress = 0.114486545
 
