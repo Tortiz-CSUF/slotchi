@@ -154,6 +154,33 @@ func _finalize_spin() -> void:
 	var heart_count: int = 0
 	var skull_count: int = 0
 	
+	for slot in slots:
+		if slot.texture == sword_icon:
+			sword_count += 1
+		elif slot.texture == shield_icon:
+			shield_count += 1
+		elif slot.texture == heart_icon:
+			heart_count += 1
+		elif slot.texture == skull_icon:
+			skull_count += 1
+			
+	# Calc player actions
+	var player_damage: int = sword_count * (2 + MonsterData.atk / 5)
+	var player_defense: int = shield_count * (1 + MonsterData.def / 5)
+	var player_heal: int = heart_count * 2
+	var skull_damage: int = skull_count * 2
+	
+	# Calcs enemy actions
+	var enemy_damage: int = 0
+	if enemy_intent == "attack":
+		enemy_damage = 5 + randi() % 4
+		
+	# Apply results
+	enemy_hp = max(0, enemy_hp - player_damage)
+	
+	
+			
+	
 	
 	
 	
