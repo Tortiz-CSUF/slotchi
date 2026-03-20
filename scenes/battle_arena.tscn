@@ -438,6 +438,7 @@ theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
 [node name="EnemySide" type="VBoxContainer" parent="EnemySideContainer" unique_id=689537712]
+custom_minimum_size = Vector2(200, 0)
 layout_direction = 3
 layout_mode = 2
 size_flags_horizontal = 8
@@ -669,7 +670,7 @@ grow_vertical = 2
 color = Color(0.07450981, 0, 0.20392157, 0.8627451)
 
 [node name="EndLabel" type="Label" parent="EndPanel" unique_id=1163692354]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
