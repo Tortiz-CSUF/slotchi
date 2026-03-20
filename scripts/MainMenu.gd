@@ -16,8 +16,7 @@ func _input(event: InputEvent) -> void:
 	
 	
 func _on_start_pressed() -> void:
-	### MUST SWAP IN CARE ROOM SCENE ONCE IMPLEMENTED
-	GameManager.change_scene("[INPUT CARE ROOM SCENE HERE]", GameManager.GameState.CARE)
+	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
 
 
 func _on_quit_pressed() -> void:

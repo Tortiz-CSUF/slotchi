@@ -27,7 +27,7 @@ func update_battle_timer(delta: float) -> void:
 
 ## Resets battle timer back to 3 mins (180 secs)
 func reset_battle_timer() -> void:
-	battle_timer = 10#180.0
+	battle_timer = 180.0
 	timer_running = true
 	
 	
