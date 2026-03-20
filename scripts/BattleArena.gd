@@ -90,10 +90,25 @@ func _ready() -> void:
 	# update HP bars and fill slot grid
 	_update_hp_bars()
 	_randomize_grid()
-
-
-
-
+	
+	
+func _process(delta: float) -> void:
+	if not is_spinning:
+		return
+		
+	# Randomize grid for spin visual
+	spin_tick += delta
+	if spin_tick >= spin_interval:
+		spin_tick = 0.0
+		_randomize_grid()
+		
+	# end spin "slot stop payout"
+	spin_timer += delta
+	if spin_timer >= spin_duration:
+		is_spinning = false
+		_finalize_spin()
+	
+### Helpers
 
 ## resets symbol pool 
 func _reset_pool() -> void:
@@ -138,6 +153,8 @@ func _on_card_pressed(card_type: String) -> void:
 	
 	
 	## starts slot machine spin
+
+
 func _on_spin_pressed() -> void:
 	if is_spinning or not card_selected or battle_over:
 		return
