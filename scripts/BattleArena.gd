@@ -200,10 +200,49 @@ func _finalize_spin() -> void:
 	info_label.text = result_text
 	
 	#update HP bars
+	_update_hp_bars()
 	
+	# check win or loss
+	if enemy_hp <= 0:
+		_end_batttle(true)
+		return
+	if MonsterData.current_hp <= 0:
+		_end_batttle(false)
+		return
+		
+	# setup next turn
+	_reset_pool()
+	card_selected = false
+	_roll_enemy_intent()
 	
+	# enable card buttons
+	card1.disabled = false
+	card2.disabled = false
+	card3.disabled = false
+	spin_button.disabled = true
+
+
+## Roll for enemys next intent
+func _roll_enemy_intent() -> void:
+	if randi() % 2 == 0:
+		enemy_intent == "attack"
+		intent_icon.text = "Intent: ATK"
+	else:
+		enemy_intent = "sabotage"
+		intent_icon.text = "Intent: Sabotage"
+		# add skulls to pool
+		for i in range(2):
+			symbol_pool.append(skull_icon)	
+	
+# Updates enemy and player HP bars
+func _update_hp_bars() -> void:
+	player_hp_bar.max_value = MonsterData.max_hp
+	player_hp_bar.value = MonsterData.current_hp
+	enemy_hp_bar.value = enemy_max_hp
+	enemy_hp_bar.value = enemy_hp
 			
-	
+## Ends battle 
+func _end_batttle(victory: bool) -> void:
 	
 	
 	
