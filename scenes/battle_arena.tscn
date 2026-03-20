@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1opsv85c1xmt"]
 
 [ext_resource type="FontFile" uid="uid://ckqwp1t2gj2xd" path="res://assets/fonts/8bit.ttf" id="1_d3rmf"]
+[ext_resource type="Script" uid="uid://capxl0ul1e1tw" path="res://scripts/BattleArena.gd" id="1_u0dfl"]
 [ext_resource type="Texture2D" uid="uid://d0vhjptighvot" path="res://assets/sprites/slime/slime_idle2.png" id="2_u0dfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1jx7t"]
@@ -124,6 +125,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u0dfl")
 
 [node name="Background" type="ColorRect" parent="." unique_id=512339236]
 layout_mode = 1
@@ -402,7 +404,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.07450981, 0, 0.20392157, 0.8627451)
 
-[node name="End Label" type="Label" parent="EndPanel" unique_id=1163692354]
+[node name="EndLabel" type="Label" parent="EndPanel" unique_id=1163692354]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
