@@ -54,6 +54,10 @@ func _update_ui() -> void:
 	# Multi display
 	var mult: float = MonsterData.get_training_multiplier()
 	multiplier_label.text = "Multiplier: %.1fx" % mult
+	if mult > 1.0:
+		multiplier_label.add_theme_color_override("font_color", Color.YELLOW)
+	else: 
+		multiplier_label.add_theme_color_override("font+color", Color.WHITE)
 	
 	# Stats Display
 	stats_label.text = "STR: %d\nAGI: %d\nSTA: %d" % [
