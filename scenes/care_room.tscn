@@ -250,6 +250,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sc44i"]
+bg_color = Color(0.14509805, 1, 0.003921569, 0.5882353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ro0j"]
+bg_color = Color(0.14509805, 1, 0.003921569, 0.5882353)
+
 [node name="CareRoom" type="Node2D" unique_id=1612300892]
 script = ExtResource("1_xswkv")
 
@@ -292,6 +298,8 @@ theme_override_constants/separation = 5
 
 [node name="MonsterName" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=903479219]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 20
 text = "SLIME"
@@ -299,23 +307,49 @@ text = "SLIME"
 [node name="HungerBar" type="ProgressBar" parent="UI/TopLeftContainer/TopLeft" unique_id=1734638229]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_sc44i")
 value = 50.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="UI/TopLeftContainer/TopLeft/HungerBar" unique_id=2048277835]
+layout_mode = 0
+offset_left = 50.0
+offset_right = 146.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_sc44i")
+text = "Hunger"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HappinessBar" type="ProgressBar" parent="UI/TopLeftContainer/TopLeft" unique_id=1670781436]
 custom_minimum_size = Vector2(200, 20)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_8ro0j")
 value = 50.0
 show_percentage = false
 
+[node name="Label" type="Label" parent="UI/TopLeftContainer/TopLeft/HappinessBar" unique_id=1674970703]
+layout_mode = 0
+offset_left = 25.0
+offset_right = 169.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_sc44i")
+text = "Happiness"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MultiplierLabel" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=1268044100]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 14
 text = "1.0x"
 
 [node name="StatusLabel" type="Label" parent="UI/TopLeftContainer/TopLeft" unique_id=767371520]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("8_sc44i")
 theme_override_font_sizes/font_size = 13
 text = "STR: 5
