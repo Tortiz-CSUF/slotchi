@@ -59,6 +59,22 @@ func _ready() -> void:
 	
 	# Connect return button
 	return_button.pressed.connect(_on_return_pressed)
+	
+	# Scale enemy hp
+	enemy_max_hp = 30 + MonsterData.max_hp
+	enemy_hp = enemy_max_hp
+	
+	# Panel fade
+	end_panel.modulate.a = 0.0
+	
+	# Get all 16 slot texture from grid
+	for i in range(16):
+		slots.append(slot_grid.get_node("Slot" + str(i)))
+		
+	# Build base symbol pool
+	base_pool = [sword_icon, sword_icon, shield_icon, shield_icon, heart_icon, heart_icon]
+	
+	
 
 
 ## Return to care room
