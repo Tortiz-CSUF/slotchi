@@ -178,6 +178,29 @@ func _finalize_spin() -> void:
 	# Apply results
 	enemy_hp = max(0, enemy_hp - player_damage)
 	
+	# Heal player
+	MonsterData.current_hp = min(MonsterData.current_hp + player_heal, MonsterData.max_hp)
+	
+	# Calcs incoming dmg 
+	var incoming: int = max(0, enemy_damage - player_defense) + skull_damage
+	MonsterData.current_hp = max(0, MonsterData.current_hp - incoming)
+	
+	# build results display
+	var result_text: String = ""
+	if sword_count > 0:
+		result_text += "Swords x%d = %d DMG! " % [sword_count, player_damage]
+	if shield_count > 0:
+		result_text += "Shields x%d = %d DEF! " % [shield_count, player_defense]
+	if heart_count > 0:
+		result_text += "Hearts x%d = +%d HP! " % [heart_count, player_heal]
+	if skull_count > 0:
+		result_text += "Skulls x%d = %d DMG to you! " % [skull_count, skull_damage]
+	if enemy_intent == "attack":
+		result_text += "Enemy dealt %d\n-%d def! " % [enemy_damage, player_defense]
+	info_label.text = result_text
+	
+	#update HP bars
+	
 	
 			
 	
