@@ -130,6 +130,30 @@ func _on_card_pressed(card_type: String) -> void:
 	card3.disabled = true
 	
 	
+	## starts slot machine spin
+func _on_spin_pressed() -> void:
+	if is_spinning or not card_selected or battle_over:
+		return
+			
+	# lock input
+	is_spinning = true
+	spin_timer = 0.0
+	spin_tick = 0.0
+	spin_button.disabled = true
+	info_label.text = "Spinning..."
+
+
+## Called when spin finishes
+func _finalize_spin() -> void:
+	# final randomizer to set results
+	_randomize_grid()
+	
+	# 	count sumbols on the grid
+	var sword_count: int = 0
+	var shield_count: int = 0
+	var heart_count: int = 0
+	var skull_count: int = 0
+	
 	
 	
 	
