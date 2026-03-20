@@ -240,84 +240,100 @@ theme_override_constants/v_separation = 8
 columns = 4
 
 [node name="Slot0" type="TextureRect" parent="SlotGrid" unique_id=1270883304]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot1" type="TextureRect" parent="SlotGrid" unique_id=2062987352]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot2" type="TextureRect" parent="SlotGrid" unique_id=643618353]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot3" type="TextureRect" parent="SlotGrid" unique_id=1406628086]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot4" type="TextureRect" parent="SlotGrid" unique_id=1852537582]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot5" type="TextureRect" parent="SlotGrid" unique_id=1549976367]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot6" type="TextureRect" parent="SlotGrid" unique_id=139174241]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot7" type="TextureRect" parent="SlotGrid" unique_id=628500522]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot8" type="TextureRect" parent="SlotGrid" unique_id=18431963]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot9" type="TextureRect" parent="SlotGrid" unique_id=1269383492]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot10" type="TextureRect" parent="SlotGrid" unique_id=1317632077]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot11" type="TextureRect" parent="SlotGrid" unique_id=1945526091]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot12" type="TextureRect" parent="SlotGrid" unique_id=968878395]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot13" type="TextureRect" parent="SlotGrid" unique_id=1068150561]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot14" type="TextureRect" parent="SlotGrid" unique_id=265310892]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Slot15" type="TextureRect" parent="SlotGrid" unique_id=688728965]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="CardContainer" type="MarginContainer" parent="." unique_id=1662029506]
 layout_mode = 1
