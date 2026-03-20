@@ -76,7 +76,20 @@ func _ready() -> void:
 	_reset_pool()
 	
 	# Connect card to spin 
+	card1.pressed.connect(_on_card_pressed.bind("sword"))
+	card2.pressed.connect(_on_card_pressed.bind("shield"))
+	card3.pressed.connect(_on_card_pressed.bind("heart"))
+	spin_button.pressed.connect(_on_spin_pressed)
 	
+	# Spin wont start until card is picked
+	spin_button.disabled = true
+	
+	# Roll first enemy intnet
+	_roll_enemy_intent()
+	
+	# update HP bars and fill slot grid
+	_update_hp_bars()
+	_randomize_grid()
 
 
 
@@ -228,12 +241,14 @@ func _roll_enemy_intent() -> void:
 		for i in range(2):
 			symbol_pool.append(skull_icon)	
 	
+	
 # Updates enemy and player HP bars
 func _update_hp_bars() -> void:
 	player_hp_bar.max_value = MonsterData.max_hp
 	player_hp_bar.value = MonsterData.current_hp
 	enemy_hp_bar.value = enemy_max_hp
 	enemy_hp_bar.value = enemy_hp
+			
 			
 ## Ends battle 
 func _end_batttle(victory: bool) -> void:
