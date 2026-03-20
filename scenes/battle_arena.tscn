@@ -396,6 +396,7 @@ theme_override_fonts/font = ExtResource("1_d3rmf")
 horizontal_alignment = 1
 
 [node name="EndPanel" type="ColorRect" parent="." unique_id=749985269]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
