@@ -73,7 +73,7 @@ func _ready() -> void:
 		
 	# Build base symbol pool
 	base_pool = [sword_icon, sword_icon, shield_icon, shield_icon, heart_icon, heart_icon]
-	
+	_reset_pool()
 	
 
 
@@ -81,3 +81,17 @@ func _ready() -> void:
 func _on_return_pressed() -> void:
 	GameManager.reset_battle_timer()
 	GameManager.change_scene("res://scenes/care_room.tscn", GameManager.GameState.CARE)
+
+
+
+
+## resets symbol pool 
+func _reset_pool() -> void:
+	symbol_pool = base_pool.duplicate()
+		
+
+## Fills all slots with ranom icons
+func _randomize_grid() -> void:
+	for slot in slots:
+		slot.texture = symbol_pool[randi() % symbol_pool.size()]
+	
